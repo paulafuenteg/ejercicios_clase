@@ -1,1 +1,1 @@
-# ejercicios_clase_python
+# ejercicios_clase

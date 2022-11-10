@@ -1,1 +1,1 @@
-CREATE TABLE leccion_3_sql.customers SELECT * FROM tienda.customers; 
+CREATE TABLE leccion_6_sql.alumnas SELECT * FROM leccion_5_sql.alumnas; 

@@ -1,0 +1,2 @@
+Segundo texto en un archivo nuevo
+ Tercer texto del archivo nuevo.Cuarto texto de nuestro archivo Quinto texto de nuestro archivo

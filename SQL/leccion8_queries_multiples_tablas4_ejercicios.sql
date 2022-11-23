@@ -13,21 +13,23 @@ ORDER BY numero_cientes DESC
 LIMIT 1);
 
 --  2 Usando la consulta anterior como subconsulta, selecciona la ciudad con el mayor numero de clientes.
-SELECT city
+SELECT city, COUNT(customer_number) AS numero_cientes
 FROM customers
-WHERE city IN (SELECT MAX(customer_number) AS numero_cientes, city AS Ciudad
-FROM customers
-GROUP by city);
-ORDER BY numero_cientes DESC
-LIMIT 1);
+GROUP BY city
+HAVING COUNT(customer_number) >= ALL
+							(SELECT COUNT(customer_number) AS numero_cientes
+							FROM customers
+							GROUP by city);
 
 -- 3 Por último, usa todas las consultas anteriores para seleccionar el customerNumber, nombre y apellido de las clientas asignadas a la ciudad con mayor numero de clientas.
 SELECT customer_number, contact_first_name, contact_last_name 
 FROM customers 
-WHERE city in (SELECT city
-FROM customers
-WHERE city IN (SELECT COUNT(customer_number) AS numero_cientes, city AS Ciudad
-FROM customers
-GROUP by city
-ORDER BY numero_cientes DESC
-LIMIT 1));
+WHERE city IN (
+				SELECT city
+				FROM customers
+				GROUP BY city
+				HAVING COUNT(customer_number) >= ALL
+													(SELECT COUNT(customer_number) AS numero_cientes
+													FROM customers
+													GROUP by city));
+

@@ -9,6 +9,14 @@ FROM products as p1
 WHERE (p1.msrp - p1.buy_price) >= (
 							SELECT AVG(p2.msrp - p2.buy_price) as AvgProfit
                             FROM products as p2) AND (p1.msrp - p1.buy_price) > 50;
+                            
+SELECT p1.product_code, p1.product_name, p1.quantity_in_stock, p1.product_line, p1.msrp, p1.buy_price, (p1.msrp - p1.buy_price) as Earn
+FROM products as p1
+WHERE (p1.msrp - p1.buy_price) >= (
+							SELECT AVG(p2.msrp - p2.buy_price) as AvgProfit
+                            FROM products as p2
+                            WHERE p1.product_code = p2.product_code
+                            HAVING AvgProfit > 50);
 
 -- 2: Encuentra los campos nombre del cliente y ciudad, de aquellas ciudades de la tabla de customers que terminen en 'on'.
 SELECT customer_name, city
@@ -33,7 +41,9 @@ WHERE address_line1 LIKE '%3%' AND city NOT LIKE 'T%';
 
 /* 6: Selecciona, haciendo uso de expresiones regulares, los campos nombre del cliente, primera dirección y ciudad. Unicamente en el caso que la dirección postal, 
 posea algún número en dicho campo.*/
-
+SELECT customer_name, address_line1, city
+FROM customers
+WHERE address_line1 REGEXP '\\d';
 
 -- 7:Investiga que ocurre al ejecutar la siguiente sentencia sobre la tabla de products.
 

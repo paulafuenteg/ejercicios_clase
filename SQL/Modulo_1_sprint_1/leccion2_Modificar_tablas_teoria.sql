@@ -1,9 +1,0 @@
-ALTER TABLE empleadas
-	MODIFY COLUMN salario FLOAT;
-
-ALTER TABLE empleadas
-	MODIFY COLUMN salario FLOAT NOT NULL;
- 
- ALTER TABLE empleadas
-	ADD COLUMN dni VARCHAR (30) UNIQUE NOT NULL;
-    

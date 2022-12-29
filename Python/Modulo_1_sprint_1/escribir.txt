@@ -1,4 +1,0 @@
-Esta línea reemplaza la anterior.
-segunda
-tercera
-cuarta

@@ -1,0 +1,40 @@
+<colores>
+    <color id="1" name="turquesa">
+        <pantone>
+            333C
+        </pantone>
+        <rgb>
+            <red>
+                120
+            </red>
+            <green>
+                210
+            </green>
+            <blue>
+                195
+            </blue>
+        </rgb>
+        <hex>
+            3CDBC0
+        </hex>
+    </color>
+    <color id="2" name="gris">
+        <pantone>
+            425C
+        </pantone>
+        <rgb>
+            <red>
+                84
+            </red>
+            <green>
+                88
+            </green>
+            <blue>
+                90
+            </blue>
+        </rgb>
+        <hex>
+            5458A
+        </hex>
+    </color>
+</colores>

@@ -1,6 +1,0 @@
-Este es la primera frase.
-Este es la segunda línea.
-
-La línea anterior era vacía.
-	Este tiene un tab delante.
-6 caracteres difíciles: å, è, í, ü, &, ¿
